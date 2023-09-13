@@ -1,0 +1,15 @@
+[submodule "opensbi"]
+	path = opensbi
+	url = git@github.com:ICT-TEE/opensbi.git
+	branch = heli-tee
+[submodule "riscv-rootfs"]
+	path = riscv-rootfs
+	url = git@github.com:ICT-TEE/riscv-rootfs.git
+	branch = heli-tee
+[submodule "NEMU"]
+	path = NEMU
+	url = git@github.com:ICT-TEE/NEMU.git
+	branch = hosttlb-tmp
+[submodule "debian-linux-kernel"]
+	path = debian-linux-kernel
+	url = git@github.com:ICT-TEE/debian-linux-kernel.git

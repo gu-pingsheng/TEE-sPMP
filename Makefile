@@ -49,6 +49,7 @@ init:
 	cd NEMU; make riscv64-tee_defconfig; make -j8
 	$(MAKE) -C $(RISCV_ROOTFS_HOME)/apps/busybox
 	$(MAKE) -C $(RISCV_ROOTFS_HOME)/apps/penglai-sdk
+	$(MAKE) -C $(LINUX_HOME) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) ${LINUX_CONFIG} 
 	$(MAKE) -C $(RISCV_ROOTFS_HOME)/apps/penglai-driver
 	$(MAKE) -C $(LINUX_HOME) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) ${LINUX_CONFIG} 
 	$(MAKE) -C $(LINUX_HOME) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) vmlinux

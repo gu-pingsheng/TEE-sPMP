@@ -1,15 +1,15 @@
 [submodule "opensbi"]
 	path = opensbi
-	url = git@github.com:ICT-TEE/opensbi.git
-	branch = heli-tee
+	url = git@github.com:PENGLAI-ZGC-TEE/opensbi.git
+	branch = penglai-zgc-tee
 [submodule "riscv-rootfs"]
 	path = riscv-rootfs
-	url = git@github.com:ICT-TEE/riscv-rootfs.git
-	branch = heli-tee
+	url = git@github.com:PENGLAI-ZGC-TEE/riscv-rootfs.git
+	branch = penglai-zgc-tee
 [submodule "NEMU"]
 	path = NEMU
-	url = git@github.com:ICT-TEE/NEMU.git
+	url = git@github.com:PENGLAI-ZGC-TEE/NEMU.git
 	branch = hosttlb-tmp
 [submodule "debian-linux-kernel"]
 	path = debian-linux-kernel
-	url = git@github.com:ICT-TEE/debian-linux-kernel.git
+	url = git@github.com:PENGLAI-ZGC-TEE/debian-linux-kernel.git

@@ -17,6 +17,7 @@ FW_PAYLOAD_PATH=$(LINUX_HOME)/vmlinux.bin
 # LINUX_CONFIG
 # LINUX_CONFIG=fpga_defconfig
 LINUX_CONFIG=nanhu_fpga_defconfig
+LINUX_INIT_CONFIG=init_defconfig
 
 # arch and cross compile infomation
 export ARCH=riscv
@@ -48,8 +49,9 @@ init:
 	git submodule update --init --recursive
 	cd NEMU; make riscv64-tee_defconfig; make -j8
 	$(MAKE) -C $(RISCV_ROOTFS_HOME)/apps/busybox
+	$(MAKE) -C $(LINUX_HOME) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) ${LINUX_INIT_CONFIG} 
+	RISCV_ROOTFS_HOME=$(RISCV_ROOTFS_HOME) $(MAKE) -C $(LINUX_HOME) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) vmlinux
 	$(MAKE) -C $(RISCV_ROOTFS_HOME)/apps/penglai-sdk
-	$(MAKE) -C $(LINUX_HOME) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) ${LINUX_CONFIG} 
 	$(MAKE) -C $(RISCV_ROOTFS_HOME)/apps/penglai-driver
 	$(MAKE) -C $(LINUX_HOME) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) ${LINUX_CONFIG} 
 	$(MAKE) -C $(LINUX_HOME) ARCH=$(ARCH) CROSS_COMPILE=$(CROSS_COMPILE) vmlinux

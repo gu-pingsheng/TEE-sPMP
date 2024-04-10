@@ -74,7 +74,9 @@ nemu-pmptable:
 nemu-menu:
 	$(MAKE) -C $(NEMU_HOME) menuconfig
 
-clean:
+nemu-clean:
+	$(MAKE) -C $(NEMU_HOME) clean
+
 	$(MAKE) -C $(SBI_HOME) clean
 	$(MAKE) -C $(LINUX_HOME) clean
 
